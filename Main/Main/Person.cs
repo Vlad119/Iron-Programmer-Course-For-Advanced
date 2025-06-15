@@ -1,23 +1,23 @@
 ﻿public class Person
 {
-    public string FirstName;
-    public string LastName;
-    public int Age;
+    public string firstName;
+    public string lastName;
+    public int age;
 
     public Person(string firstName, string lastName, int age)
     {
-        FirstName = firstName;
-        LastName = lastName;
-        Age = age;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
 
     public string GetFullName()
     {
-        return $"{LastName} {FirstName}";
+        return $"{lastName} {firstName}";
     }
 
     public bool IsAdult()
     {
-        return Age >= 18;
+        return age >= 18;
     }
 }
