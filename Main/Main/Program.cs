@@ -1,5 +1,4 @@
-﻿using Main;
-using System;
+﻿using System;
 
 internal class Program
 {
