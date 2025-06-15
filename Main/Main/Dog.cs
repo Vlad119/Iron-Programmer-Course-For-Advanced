@@ -2,21 +2,21 @@
 {
     public class Dog
     {
-        public string Name;
+        public string name;
         public int age;
         public Dog(string _name, int _age)
         {
-            Name = _name;
+            name = _name;
             age = _age;
         }
         public string GetDescription()
         {
-            string s = $"{Name} is {age} years old";
+            string s = $"{name} is {age} years old";
             return s;
         }
         public string Speak(string sound)
         {
-            string s = $"{Name} says {sound}";
+            string s = $"{name} says {sound}";
             return s;
         }
     }
