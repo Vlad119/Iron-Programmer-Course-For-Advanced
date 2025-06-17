@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace Main
+public class Program
 {
-    internal class Program
+    public static void Main()
     {
-        public static void Main()
-        {
-            Driver driver = new Driver("Иван", "Иванов", 34);
-            Console.WriteLine($"Новый водитель: {driver.FirstName} {driver.LastName}, возраст: {driver.Age}");
-            driver.FirstName = "Алексей";
-            driver.LastName = "Алексеев";
-            driver.Age = 30;
-            Console.WriteLine($"Новый водитель: {driver.FirstName} {driver.LastName}, возраст: {driver.Age}");
-        }
+        Driver driverA = new Driver("Иван", "Иванов", 34);
+        Driver driverB = new Driver("Алексей", "Алексеев", 30);
+        Car carA = new Car("A123KC", "Красный", driverA);
+        Car carB = new Car("В321EM", "Белый", driverB);
+        Console.WriteLine($"Автомобиль A: {carA.Number} {carA.Color} {carA.Driver.LastName}");
+        carA.Color = carB.Color;
+        carA.Number = carB.Number;
+        carA.Driver = carB.Driver;
+        Console.WriteLine($"Автомобиль A: {carA.Number} {carA.Color} {carA.Driver.LastName}");
     }
 }
