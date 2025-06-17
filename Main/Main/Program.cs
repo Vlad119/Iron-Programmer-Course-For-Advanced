@@ -5,13 +5,25 @@ public class Program
     public static void Main()
     {
         Driver driverA = new Driver("Иван", "Иванов", 34);
-        Driver driverB = new Driver("Алексей", "Алексеев", 30);
-        Car carA = new Car("A123KC", "Красный", driverA);
-        Car carB = new Car("В321EM", "Белый", driverB);
-        Console.WriteLine($"Автомобиль A: {carA.Number} {carA.Color} {carA.Driver.LastName}");
-        carA.Color = carB.Color;
-        carA.Number = carB.Number;
-        carA.Driver = carB.Driver;
-        Console.WriteLine($"Автомобиль A: {carA.Number} {carA.Color} {carA.Driver.LastName}");
+        Driver driverC = new Driver("Пётр", "Петров", 25);
+        Car carA = new Car("A123MP", "Красный", driverA);
+        Car carB = new Car("B456XC", "Синий", null);
+        Car carC = new Car("K789BA", "Белый", driverC);
+        CarsDrivers(new Car[] { carA, carB, carC });
+    }
+
+    public static void CarsDrivers(Car[] cars)
+    {
+        foreach (var car in cars)
+        {
+            if (car.Driver != null)
+            {
+                Console.WriteLine($"{car.Number}:{car.Driver.LastName}");
+            }
+            else
+            {
+                Console.WriteLine($"{car.Number}:Нет водителя");
+            }
+        }
     }
 }
