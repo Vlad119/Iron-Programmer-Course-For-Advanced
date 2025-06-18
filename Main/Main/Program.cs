@@ -1,24 +1,33 @@
 ﻿using System;
 
-namespace Main
+public class Program
 {
-    internal class Program
+    public static void Main()
     {
-        public static void Main()
+        Person mom = new Person("Светлана", 20, null, null);
+        Person dad = new Person("Алексей", 20, null, null);
+        Person baby = new Person("Паша", 0, mom, dad);
+        Console.WriteLine($"Mom age: {baby.Mom.Age}");
+        Console.WriteLine($"Dad age: {baby.Dad.Age}");
+        UpdateMomAge(baby);
+        UpdateDadAge(baby);
+        Console.WriteLine($"Mom age: {baby.Mom.Age}");
+        Console.WriteLine($"Dad age: {baby.Dad.Age}");
+    }
+
+    public static void UpdateMomAge(Person person)
+    {
+        if (person.Mom != null)
         {
-            RegisterBaby("Миша", new Person("Светлана", 23, null, null), new Person("Алексей", 24, null, null));
-            if (typeof(Person).GetField("Mom").IsInitOnly && typeof(Person).GetField("Dad").IsInitOnly)
-            {
-                Console.WriteLine("Ок");
-            }
+            person.Mom.Age++;
         }
-        public static void RegisterBaby(string name, Person mom, Person dad)
+    }
+
+    public static void UpdateDadAge(Person person)
+    {
+        if (person.Dad != null)
         {
-            Person baby = new Person(name, 0, mom, dad);
-            if (typeof(Person).GetField("Mom").IsInitOnly && typeof(Person).GetField("Dad").IsInitOnly)
-            {
-                Console.WriteLine("Ок");
-            }
+            person.Dad.Age++;
         }
     }
 }
