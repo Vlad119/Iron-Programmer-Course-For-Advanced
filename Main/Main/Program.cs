@@ -1,10 +1,15 @@
-﻿namespace Main
+﻿using System;
+
+namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-
+            Dictionary dict = new Dictionary();
+            Console.WriteLine(dict["blue"]);
+            dict["blue"] = "голубой";
+            Console.WriteLine(dict["blue"]);
         }
     }
 }
