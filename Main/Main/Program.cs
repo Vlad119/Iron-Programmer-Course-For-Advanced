@@ -6,23 +6,72 @@ namespace Main
     {
         public static void Main()
         {
-            Edge edge = new Edge();
-            edge.FirstPoint = new Point()
+            Edge[] edges = new Edge[]
             {
-                X_Position = 2.3,
-                Y_Position = 3.5
-            };
-            edge.SecondPoint = new Point()
+        new Edge()
+        {
+            FirstPoint = new Point()
             {
-                X_Position = 3.5,
-                Y_Position = 7.3
+                X_Position = 4.5,
+                Y_Position = 3.6
+            },
+            SecondPoint = new Point()
+            {
+                X_Position = 7.3,
+                Y_Position = 2.4
+            }
+        },
+        new Edge()
+        {
+            FirstPoint = new Point()
+            {
+                X_Position = 1.8,
+                Y_Position = 2.1
+            },
+            SecondPoint = new Point()
+            {
+                X_Position = 1.8,
+                Y_Position = 6.5
+            }
+        },
+        new Edge()
+        {
+            FirstPoint = new Point()
+            {
+                X_Position = 5.6,
+                Y_Position = 7.8
+            },
+            SecondPoint = new Point()
+            {
+                X_Position = 9.1,
+                Y_Position = 3.4
+            }
+        },
+        new Edge()
+        {
+            FirstPoint = new Point()
+            {
+                X_Position = 3.2,
+                Y_Position = 4.5
+            },
+            SecondPoint = new Point()
+            {
+                X_Position = 3.2,
+                Y_Position = 1.6
+            }
+        }
             };
-            edge.Layer = -4;
-            edge.EdgeThickness = 7.2;
-            edge.EdgeColor = "красный";
-            Console.WriteLine($"X:{edge.FirstPoint.X_Position} Y:{edge.FirstPoint.Y_Position}");
-            Console.WriteLine($"X:{edge.SecondPoint.X_Position} Y:{edge.SecondPoint.Y_Position}");
-            Console.WriteLine($"Слой:{edge.Layer}, Цвет границ:{edge.EdgeColor}, Толщина границ:{ edge.EdgeThickness}, Цвет заливки:{ edge.FillColor}");
-}
+
+            ShowVerticalEdges(edges);
+        }
+
+        public static void ShowVerticalEdges(Edge[] edges)
+        {
+            foreach (Edge edge in edges)
+            {
+                if (edge.FirstPoint.X_Position == edge.SecondPoint.X_Position)
+                    Console.Write($"{edge.FirstPoint.X_Position} {edge.FirstPoint.Y_Position} {edge.SecondPoint.X_Position} {edge.SecondPoint.Y_Position}\n");
+            }
+        }
     }
 }
