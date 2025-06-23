@@ -6,13 +6,10 @@ namespace Main
     {
         public static void Main()
         {
-            Figure figure = new Figure();
-            figure.Layer = 1;
-            Console.WriteLine($"Слой:{figure.Layer}, Цвет границ:{figure.EdgeColor}, Толщина границ:{figure.EdgeThickness}, Цвет заливки:{figure.FillColor}");
-            figure.EdgeThickness = 3.4;
-            figure.EdgeColor = "красный";
-            figure.FillColor = "зелёный";
-            Console.WriteLine($"Слой:{figure.Layer}, Цвет границ:{figure.EdgeColor}, Толщина границ: {figure.EdgeThickness}, Цвет заливки:{figure.FillColor}");
+            Point point = new Point();
+            point.X_Position = 2;
+            point.Y_Position = 3.4;
+            Console.WriteLine($"X:{point.X_Position} Y:{point.Y_Position}");
         }
     }
 }
