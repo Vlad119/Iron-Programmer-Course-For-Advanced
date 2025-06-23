@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Main
 {
@@ -6,72 +7,25 @@ namespace Main
     {
         public static void Main()
         {
-            Edge[] edges = new Edge[]
+            Polygon polygon = new Polygon();
+            polygon.Layer = 0;
+            polygon.EdgeThickness = 2.4;
+            polygon.EdgeColor = "красный";
+            polygon.FillColor = "белый";
+            polygon.Points = new List<Point>()
+            { new Point()
+            { X_Position = 5.6, Y_Position = 3.4 },
+            new Point()
+            { X_Position = 6.7, Y_Position = 2.4 },
+            new Point()
+            { X_Position = 5.1, Y_Position = 2.4 },
+            new Point()
+            { X_Position = 2.2, Y_Position = 7.1 }};
+            foreach (Point p in polygon.Points)
             {
-        new Edge()
-        {
-            FirstPoint = new Point()
-            {
-                X_Position = 4.5,
-                Y_Position = 3.6
-            },
-            SecondPoint = new Point()
-            {
-                X_Position = 7.3,
-                Y_Position = 2.4
+                Console.WriteLine($"X:{p.X_Position} Y:{p.Y_Position}");
             }
-        },
-        new Edge()
-        {
-            FirstPoint = new Point()
-            {
-                X_Position = 1.8,
-                Y_Position = 2.1
-            },
-            SecondPoint = new Point()
-            {
-                X_Position = 1.8,
-                Y_Position = 6.5
-            }
-        },
-        new Edge()
-        {
-            FirstPoint = new Point()
-            {
-                X_Position = 5.6,
-                Y_Position = 7.8
-            },
-            SecondPoint = new Point()
-            {
-                X_Position = 9.1,
-                Y_Position = 3.4
-            }
-        },
-        new Edge()
-        {
-            FirstPoint = new Point()
-            {
-                X_Position = 3.2,
-                Y_Position = 4.5
-            },
-            SecondPoint = new Point()
-            {
-                X_Position = 3.2,
-                Y_Position = 1.6
-            }
-        }
-            };
-
-            ShowVerticalEdges(edges);
-        }
-
-        public static void ShowVerticalEdges(Edge[] edges)
-        {
-            foreach (Edge edge in edges)
-            {
-                if (edge.FirstPoint.X_Position == edge.SecondPoint.X_Position)
-                    Console.Write($"{edge.FirstPoint.X_Position} {edge.FirstPoint.Y_Position} {edge.SecondPoint.X_Position} {edge.SecondPoint.Y_Position}\n");
-            }
+            Console.WriteLine($"Слой:{polygon.Layer}, Цвет границ:{polygon.EdgeColor}, Толщина границ:{polygon.EdgeThickness}, Цвет заливки:{polygon.FillColor}");
         }
     }
 }
