@@ -10,25 +10,24 @@ public class Program
         Polygon polygon = new Polygon(3, "blue", 6.7, "green", new List<Point> { new Point(2, 3), new Point(5, 6), new Point(4, 5) });
         Edge edge2 = new Edge(1, "black", 7.8, "black", new Point(2, 3), new Point(4, -6));
         Circle circle2 = new Circle(9, "yellow", 3, "black", new Point(1, 7), 6);
-        Figure nearestFigure = FindNearestFigure(new Figure[] { circle, edge, polygon, edge2, circle2 });
-        Console.WriteLine($"Слой:{nearestFigure.Layer}, Цвет границ:{nearestFigure.EdgeColor}, Толщина границ:{nearestFigure.EdgeThickness}, Цвет заливки:{nearestFigure.FillColor}");
+        List<Circle> circles = FindCircles(new Figure[] { circle, edge, polygon, edge2, circle2 });
+        foreach (Circle c in circles)
+        {
+            Console.WriteLine($"Radius: {c.Radius}");
+        }
     }
 
-
-    public static Figure FindNearestFigure(Figure[] figures)
+    //downcats при проверке фигур
+    public static List<Circle> FindCircles(Figure[] figures)
     {
-        if (figures == null || figures.Length == 0)
+        List<Circle> result = new List<Circle>();
+       foreach (Figure fig in figures)
         {
-            return null; 
-        }
-        Figure nearestFigure = figures[0];
-        foreach (var figure in figures)
-        {
-            if (figure.Layer > nearestFigure.Layer)
+            if(fig is Circle circle)
             {
-                nearestFigure = figure; 
+                result.Add(circle);
             }
         }
-        return nearestFigure;
+        return result;
     }
 }
