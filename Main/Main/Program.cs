@@ -12,19 +12,20 @@ public class Program
         Polygon polygon = new Polygon(3, "d", 1.7, "k", new List<Point> { new Point(2, 3), new Point(5, 6), new Point(4, 9) });
         Edge edge2 = new Edge(1, "f", 7.8, "r", new Point(2, 3), new Point(4, -6));
         Circle circle2 = new Circle(89, "n", 3, "p", new Point(1, 7), 6);
-        Polygon firstTriangle = FindFirstTriangle(new Figure[] { circle, edge, polygon1, polygon2, polygon, edge2, circle2 });
-        Console.WriteLine($"Слой:{firstTriangle.Layer}, Цвет границ:{firstTriangle.EdgeColor}, Толщина границ:{firstTriangle.EdgeThickness}, Цвет заливки:{firstTriangle.FillColor}");
+        Figure[] figures = new Figure[] { circle, edge, circle2, polygon2, polygon, edge2, polygon1 };
+        RepaintEdges(figures);
+        Console.WriteLine(edge.EdgeColor);
+        Console.WriteLine(edge2.EdgeColor);
     }
 
-    public static Polygon FindFirstTriangle(Figure[] figures)
+    private static void RepaintEdges(Figure[] figures)
     {
         foreach (Figure f in figures)
         {
-            if (f is Polygon polygon && polygon.Points.Count == 3)
+            if(f is Edge edge)
             {
-                return polygon;
+                edge.EdgeColor = "голубой";
             }
         }
-        return null;
     }
 }
