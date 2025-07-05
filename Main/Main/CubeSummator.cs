@@ -1,7 +1,5 @@
-﻿public class CubeSummator : Summator
+﻿public class CubeSummator : PowerSummator
 {
-    protected override int Transform(int item)
-    {
-        return item * item * item; 
-    }
+    public CubeSummator() : base(3) { }
 }
+   

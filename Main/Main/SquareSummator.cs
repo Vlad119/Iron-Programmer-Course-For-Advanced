@@ -1,7 +1,4 @@
-﻿public class SquareSummator : Summator
+﻿public class SquareSummator : PowerSummator
 {
-    protected override int Transform(int item)
-    {
-        return item * item; 
-    }
+    public SquareSummator() : base(2) { }
 }
