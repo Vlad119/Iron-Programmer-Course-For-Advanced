@@ -1,10 +1,14 @@
-﻿namespace Main
+﻿using System;
+
+namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-
+            Console.WriteLine(new Summator().Sum(5));
+            Console.WriteLine(new SquareSummator().Sum(5));
+            Console.WriteLine(new CubeSummator().Sum(5));
         }
     }
 }
