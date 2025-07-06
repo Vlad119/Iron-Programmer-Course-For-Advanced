@@ -1,4 +1,6 @@
-﻿public sealed class Circle : Figure
+﻿using System;
+
+public sealed class Circle : Figure
 {
     public Point Center { get; set; }
     public double Radius { get; set; }
@@ -8,5 +10,11 @@
     {
         Center = center;
         Radius = radius;
+    }
+
+    public override void Draw()
+    {
+        base.Draw();
+        Console.WriteLine($"Окружность радиуса {Radius} с центром X:{Center.X_Position} Y:{Center.Y_Position}");
     }
 }
