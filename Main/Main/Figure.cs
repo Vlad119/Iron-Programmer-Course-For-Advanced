@@ -1,4 +1,6 @@
-﻿public class Figure
+﻿using System;
+
+public class Figure
 {
     public int Layer { get; set; }
     public string EdgeColor { get; set; } = "чёрный";
@@ -11,5 +13,10 @@
         EdgeColor = edgeColor;
         EdgeThickness = edgeThickness;
         FillColor = fillColor;
+    }
+
+    public virtual void Draw()
+    {
+        Console.WriteLine($"Отрисовка фигуры... Слой:{Layer}, Цвет границ:{EdgeColor}, Толщина границ:{EdgeThickness:F1}, Цвет заливки:{FillColor}");
     }
 }
