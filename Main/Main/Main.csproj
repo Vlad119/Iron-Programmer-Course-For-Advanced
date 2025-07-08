@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Apple.cs" />
+    <Compile Include="Grape.cs" />
+    <Compile Include="Juice.cs" />
+    <Compile Include="JuiceExtractor.cs" />
+    <Compile Include="Orange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
