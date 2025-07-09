@@ -1,10 +1,12 @@
-﻿namespace Main
+﻿using System;
+
+namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-
+            int a = new A() + new A() + new A() * "abc";
         }
     }
 }
