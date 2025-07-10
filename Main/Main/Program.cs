@@ -1,10 +1,14 @@
-﻿namespace Main
+﻿using System;
+
+namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-
+            BankAccount accountA = new BankAccount() { Balance = 200 };
+            BankAccount accountB = new BankAccount() { Balance = 300 };
+            Console.WriteLine(accountA + accountB);
         }
     }
 }
