@@ -4,19 +4,23 @@ namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            SuperHero Batman = new SuperHero("Бэтмен");
-            Console.WriteLine(((Human)Batman).Name);
+            Human piterParker = new Human("Питер Паркер");
+            SuperHero spiderMan = piterParker;
+            Console.WriteLine(spiderMan.Name);
 
-            SuperHero SpiderMan = new SuperHero("Человек-паук");
-            Console.WriteLine(((Human)SpiderMan).Name);
+            Human clarkKent = new Human("Кларк Кент");
+            SuperHero superMan = clarkKent;
+            Console.WriteLine(superMan.Name);
 
-            SuperHero Superman = new SuperHero("Супермен");
-            Console.WriteLine(((Human)Superman).Name);
+            Human bruceWayne = new Human("Брюс Уейн");
+            SuperHero batman = bruceWayne;
+            Console.WriteLine(batman.Name);
 
-            SuperHero MegaMan = new SuperHero("Мегамен");
-            Console.WriteLine(((Human)MegaMan).Name);
+            Human nikolasCage = new Human("Николас Кейдж");
+            SuperHero ghostRider = nikolasCage;
+            Console.WriteLine(ghostRider.Name);
         }
     }
 }
