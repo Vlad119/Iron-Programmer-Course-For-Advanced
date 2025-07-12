@@ -11,8 +11,8 @@
         Surname = surname;
     }
 
-    public static explicit operator string(Student student)
+    public static implicit operator int(Student student)
     {
-        return $"{student.Name} {student.Surname}";
+        return student.Id;
     }
 }
