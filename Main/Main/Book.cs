@@ -13,14 +13,9 @@
             Author = author;
         }
 
-        public static explicit operator int(Book book)
+        public static implicit operator Author(Book book)
         {
-            return book.Id;
-        }
-
-        public static implicit operator string(Book book)
-        {
-            return book.Title;
+            return book.Author;
         }
     }
 }

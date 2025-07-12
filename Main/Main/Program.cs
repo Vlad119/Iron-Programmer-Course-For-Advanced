@@ -4,10 +4,14 @@ namespace Main
 {
     internal class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Book book = new Book(1, "Мёртвые души", new Author() { Name = "Н.В. Гоголь" });
-            Console.WriteLine($"{(int)book} {(string)book}");
+            Book book = new Book(1, "Война и мир", new Author() { Name = "Л.Н. Толстой" });
+            AddAuthorIntoDataBase(book);
+        }
+        private static void AddAuthorIntoDataBase(Book book)
+        {
+            Console.WriteLine($"{book.Author.Name}");
         }
     }
 }
