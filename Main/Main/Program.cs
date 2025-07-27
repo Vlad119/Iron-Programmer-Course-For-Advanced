@@ -21,7 +21,7 @@ namespace Stepik
             new User { Name = "Charlie", Age = 35 }
             };
 
-            List<User> filteredUsers = FilterUsers(users, u => u.Age > 25);
+            List<User> filteredUsers = FilterUsers(users, user => user.Age > 25);
 
             foreach (var user in filteredUsers)
             {
