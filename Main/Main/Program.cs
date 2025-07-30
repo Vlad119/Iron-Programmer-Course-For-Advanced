@@ -4,8 +4,12 @@ internal class Program
 {
     public static void Main()
     {
-        UserManager userManager = new UserManager();
-        userManager.Register(new User("Алексей", "a.potapov@gmail.com", "qwerty123"));
-        Console.WriteLine($"Пользователь {userManager.Users[0].Name} зарегистрирован");
+        EventArgs arg = new UserRegisteredEventArgs("Test2@yandex.ru");
+        var info = typeof(UserRegisteredEventArgs).GetProperty("Email");
+        if (info.CanWrite == false)
+            Console.WriteLine("Ok");
+        else
+            throw new Exception("Свойство Email должно быть только для чтения");
+
     }
 }
