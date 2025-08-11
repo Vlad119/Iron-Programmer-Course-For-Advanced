@@ -1,20 +1,16 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 internal class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        User user = new User("Ivan Ivanov", "test@yandex.ru", "123321");
+        User user = new User("Ivan Ivanov", "ivanov@yandex.ru", "123321");
 
         UserManager userManager = new UserManager();
-        userManager.Register(user);
+        TwoFactorAuthentication twoFactorAuthentication = new TwoFactorAuthentication(userManager);
+        twoFactorAuthentication.TurnOn();
 
-        var foundUser = userManager.Users.FirstOrDefault(x => x.Name.Equals(user.Name) && x.Email.Equals(user.Email) && x.Password.Equals(user.Password));
-        if (foundUser == null)
-            throw new Exception("Ошибка в добавлении пользователя");
-        else
-            Console.WriteLine("Ok");
+        userManager.Register(user);
     }
 
 }
