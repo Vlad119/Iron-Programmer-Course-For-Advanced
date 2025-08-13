@@ -1,16 +1,11 @@
-﻿using System.Linq;
-
-internal class Program
+﻿internal class Program
 {
     static void Main(string[] args)
     {
         User user = new User("Ivan Ivanov", "ivanov@yandex.ru", "123321");
-
         UserManager userManager = new UserManager();
-        TwoFactorAuthentication twoFactorAuthentication = new TwoFactorAuthentication(userManager);
-        twoFactorAuthentication.TurnOn();
-
+        var advertisement = new Advertisement(userManager);
+        advertisement.TurnOn();
         userManager.Register(user);
     }
-
 }
