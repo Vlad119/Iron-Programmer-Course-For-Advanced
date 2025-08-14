@@ -15,3 +15,4 @@
 18 - структуры <br>
 19 - decimal <br>
 20 - обобщения, boxing/unboxing <br>
+21 - action, func, delegate, lambda, события <br>
