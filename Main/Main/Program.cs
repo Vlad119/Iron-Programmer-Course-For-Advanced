@@ -4,8 +4,11 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        ButtonClickedEventArgs buttonClickedEventArgs = new ButtonClickedEventArgs("Подвал#4");
-        Console.WriteLine($"Название комнаты: {buttonClickedEventArgs.Location}");
-        Console.WriteLine($"Номер кнопки: {buttonClickedEventArgs.Number}");
+        Button button = new Button("Столовая#4");
+        button.ClickHandler += (object sender, ButtonClickedEventArgs e) =>
+        {
+            Console.WriteLine($"Нажата кнопка в локации: {e.Location}, с номером {e.Number}");
+        };
+        button.Clicked();
     }
 }
