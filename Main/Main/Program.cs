@@ -9,8 +9,7 @@ internal class Program
             Id = 1,
             Name = "Ivan",
             Age = 25
-        }
-        ;
+        };
         Console.WriteLine($"Id = {user.Id}, Name = {user.Name}, Age = {user.Age}");
     }
 }
