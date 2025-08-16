@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 internal class Program
 {
     public static void Main()
     {
-        var user = new User()
-        {
-            Id = 1,
-            Name = "Ivan",
-            Age = 25
-        };
-        Console.WriteLine($"Id = {user.Id}, Name = {user.Name}, Age = {user.Age}");
+        IUsersStorage usersStorage = new UsersInMemoryStorage();
+        List<User> users = usersStorage.GetAll();
+        Console.WriteLine(users.Count == 0);
+
+        User user = usersStorage.TryGetById(5);
+        Console.WriteLine(user == null);
+
+        usersStorage.Add(new User { Id = 1, Name = "Josef", Age = 26 });
+        usersStorage.Add(new User { Id = 2, Name = "Mark", Age = 27 });
+        Console.WriteLine(users.Count == 2);
+
+        user = usersStorage.TryGetById(2);
+        Console.WriteLine(user.Name == "Mark");
     }
 }

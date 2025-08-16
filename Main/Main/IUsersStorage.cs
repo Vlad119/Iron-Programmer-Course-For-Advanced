@@ -3,6 +3,6 @@
 public interface IUsersStorage
 {
     List<User> GetAll();
-    User TryGetUser(int id);
+    User TryGetById(int id);
     void Add(User user);
 }
