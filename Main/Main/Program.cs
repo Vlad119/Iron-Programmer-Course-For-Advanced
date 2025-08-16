@@ -18,5 +18,8 @@ internal class Program
 
         user = usersStorage.TryGetById(2);
         Console.WriteLine(user.Name == "Mark");
+
+        Console.WriteLine(usersStorage.UpdateById(2, "Andrew", 27));
+        Console.WriteLine(usersStorage.RemoveById(2));
     }
 }
