@@ -1,16 +1,10 @@
-﻿using System.Collections;
-
-public class UsersStorageEnumerator : IEnumerator
+﻿public class UsersStorageEnumerator
 {
     private readonly User[] users;
     private int currentIndex = -1;
-    public object Current => users[currentIndex];
-
-    public UsersStorageEnumerator(User[] users)
-    {
-        this.users = users;
-    }
-
+    public User Current => users[currentIndex];
+    public UsersStorageEnumerator(User[] _users) => users = _users;
+    public void Reset() => currentIndex = -1;
     public bool MoveNext()
     {
         currentIndex++;
@@ -19,10 +13,5 @@ public class UsersStorageEnumerator : IEnumerator
             return false;
         }
         return true;
-    }
-
-    public void Reset()
-    {
-        currentIndex = -1;
     }
 }
