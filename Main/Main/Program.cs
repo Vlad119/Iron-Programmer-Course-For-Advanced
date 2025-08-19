@@ -8,12 +8,12 @@ public class Program
         {
             new Flat { Number = 1, RoomsCount = 2 },
             new Flat { Number = 2, RoomsCount = 3 },
-            new Flat { Number = 3, RoomsCount = 4 }
+            new Flat { Number = 26, RoomsCount = 1 }
         };
-        Entrance myEntrance = new Entrance(flats);
-        foreach (Flat flat in myEntrance)
+        Entrance entrance = new Entrance(flats);
+        foreach (var item in entrance)
         {
-            Console.WriteLine(flat);
+            Console.WriteLine(item.Number);
         }
     }
 }

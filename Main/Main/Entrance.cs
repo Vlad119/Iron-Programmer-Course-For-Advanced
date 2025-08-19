@@ -1,23 +1,14 @@
-﻿using System.Collections;
-
-public class Entrance : IEnumerable, IEnumerator
+﻿public class Entrance 
 {
     private readonly Flat[] flats;
-    private int currentIndex = -1;
-    public object Current => flats[currentIndex];
+    private int index = -1;
     public Entrance(Flat[] _flats) => flats = _flats;
-
-    public IEnumerator GetEnumerator() => this;
-
+    public Entrance GetEnumerator() => this;
+    public Flat Current => flats[index];
     public bool MoveNext()
     {
-        currentIndex++;
-        if (currentIndex >= flats.Length)
-        {
-            return false;
-        }
-        return true;
+        index++;
+        return index < flats.Length;
     }
-
-    public void Reset() => currentIndex = -1;
+    public void Reset() => index = -1;
 }
