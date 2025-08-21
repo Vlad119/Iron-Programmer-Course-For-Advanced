@@ -8,9 +8,7 @@ public class Entrance : IEnumerable<Flat>, IEnumerator<Flat>
     public Entrance(Flat[] _flats) => flats = _flats;
     public Flat Current => flats[index];
     Flat IEnumerator<Flat>.Current => flats[index];
-
     object IEnumerator.Current => Current;
-
     IEnumerator IEnumerable.GetEnumerator() => this;
     IEnumerator<Flat> IEnumerable<Flat>.GetEnumerator() => this;
 
