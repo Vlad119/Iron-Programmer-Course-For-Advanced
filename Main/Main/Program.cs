@@ -2,16 +2,27 @@
 
 internal class Program
 {
-    public enum TrafficLight
+    public enum Month
     {
-        Red, Yellow, Green
+        January,
+        February,
+        March,
+        April,
+        May,
+        June,
+        July,
+        August,
+        September,
+        October,
+        November,
+        December
     }
 
 
     static void Main(string[] args)
     {
-        Console.WriteLine((int)TrafficLight.Red);
-        Console.WriteLine((int)TrafficLight.Yellow);
-        Console.WriteLine((int)TrafficLight.Green);
+        Console.WriteLine((int)Month.November);
+        Console.WriteLine((int)Month.December);
+        Console.WriteLine((int)Month.June);
     }
 }
