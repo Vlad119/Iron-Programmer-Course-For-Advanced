@@ -14,7 +14,7 @@ internal class Program
             new Student("Андрей Сахаров", 11, 3.9),
             new Student("Пётр Капица", 7, 4.5)
         };
-        Array.Sort(students);
+        Array.Sort(students, new GradeComparer());
         foreach (var student in students)
         {
             Console.WriteLine(student);
