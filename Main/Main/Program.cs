@@ -2,27 +2,22 @@
 
 internal class Program
 {
-    public enum Month
+    public enum WeekDay
     {
-        January,
-        February,
-        March,
-        April,
-        May,
-        June,
-        July,
-        August,
-        September,
-        October,
-        November,
-        December
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday
     }
 
 
     static void Main(string[] args)
     {
-        Console.WriteLine((int)Month.November);
-        Console.WriteLine((int)Month.December);
-        Console.WriteLine((int)Month.June);
+        Console.WriteLine((int)WeekDay.Wednesday);
+        Console.WriteLine((int)WeekDay.Monday);
+        Console.WriteLine((int)WeekDay.Friday);
     }
 }
