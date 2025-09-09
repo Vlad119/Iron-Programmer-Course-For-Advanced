@@ -16,3 +16,8 @@
 19 - decimal <br>
 20 - обобщения, boxing/unboxing <br>
 21 - action, func, delegate, lambda, события <br>
+22 - интерфейсы, IEnumerable, IEnumeratorб,IComparable, IComparer <br>
+23 - абстракция <br>
+24 - перечисления <br>
+25 - кортежи (Tuple, ValueTuple) <br>
+26 - init и record <br>
